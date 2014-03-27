@@ -1,0 +1,78 @@
+PROJECT L.E.A.F
+===============
+
+User Cards
+----------
+Admin
+	- Manage Students (Edit Profile, Delete)
+	- Manage Teachers (Edit Profile, Delete)
+Teachers
+	- Manage Classes (Add, Edit Name, Delete)
+	- Manage Evaluations in a Class (Add, Delete)
+	- Manage Profile (Edit)
+	- Read Comments in a class
+Students
+	- Manage Classes (Join, Leave)
+	- Manage Profile (Edit)
+	- Add Comments to a Class
+	- Read Public Comments
+	- Answer Evaluations in a Class
+
+Views and Routes (Actions)
+--------------------------
+Generics
+	- Homepage (Not Logged-in)				/ (*)
+	- Register (Student)					/student/register (*)
+	- Register (Teachers)					/teacher/register (*)
+	- Login (Student)						/student/login (*)
+	- Login (Teaceher)						/teacher/login (*)
+Admin
+	- Index									/admin (*)
+	- Manage Students						/admin/students (*)
+		- sort							
+		- search						
+		- edit 							
+	- Manage Teachers						/admin/teachers (*)
+		- sort
+		- search
+		- edit
+Teachers
+	- index 								/teacher (*)
+	- Profile								/teacher/profile (*)
+	- Manage Classes						/teacher/classes/ (*)
+		- add 								/teacher/classes/add (*)
+		- show class (index of a class)		/teacher/classes/:id (*)
+			- list students
+			- Show student 					/teacher/classes/:id/students/:id (*)
+				- Show profile
+				- show comments(teacher)
+				- Add comments
+			- List Comments				
+			- List Evaluations			
+			- Show Evaluation   			/teacher/classes/:id/evaluations (*)
+				- Results
+				- Graphs
+			- Add Evaluation 				/teacher/classes/:id/evaluations/add (*)
+				- Add Questions
+					(Open or Close)
+Students
+	- Index 								/student (*)
+		- list attended classes
+		- search for classes
+	- Profile 								/student/profile  (*)
+	- Manage Classes 						/student/classes (*)
+		- join class
+		- show class 						/student/classes/:id (*)
+			- list available Evaluations 	
+			- Take Evaluation 				/student/classes/:id/evaluations/:id (*)
+			- list answered evaluations  	 
+			- List teacher comments to self
+			- Add comments to teacher 	 
+
+
+
+
+
+
+
+
