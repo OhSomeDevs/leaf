@@ -1,0 +1,18 @@
+--SELECT id,firstname,lastname,email,age,profession,school FROM teacher WHERE username = 'tobi' AND "password" = 'obito';
+
+--SELECT id,firstname,lastname,age,course,school,email FROM students WHERE username = 'geoff123' AND "password" = 'diaz';
+
+--INSERT INTO evaluation VALUES ('2002','303','Evaluation',current_time);
+
+--INSERT INTO question VALUES ('2004','Wala','1001',1);
+
+--INSERT INTO question VALUES ('2005','With Choices','1001',2);
+
+--INSERT INTO choice VALUES ('3006','2005','Oo');
+
+--INSERT INTO teacher VALUES ('203','jun2x','gemini','Junar','Landicho','junarlandicho@gmail.com',28,'instructor','MUST');
+
+--SELECT id,firstname,lastname,age,course,school,email FROM students WHERE id = '101';
+
+--SELECT id,firstname,lastname,email,age,profession,school FROM teacher WHERE id = '203';
+
