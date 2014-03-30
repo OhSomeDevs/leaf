@@ -21,8 +21,8 @@ class Teacher extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$this->load->model('dbe');
-		$result = $this->dbe->ifTeacherExist($username,$password);
-		if(!$result){
+		$result = $this->dbe->ifTeacherExist($username,$password);	
+		if($result){
 			$print['content'] = "success";
 			$this->load->view('template',$print);
 		}
