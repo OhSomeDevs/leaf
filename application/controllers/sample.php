@@ -6,7 +6,7 @@ class Sample extends CI_Controller {
 		$this->load->view('sample/index');		
 	}
 
-	public function form_check(){
+	public function form_check(){		
 		/*if ( !is_null($this->input->post('name')) ){
 			$this->load->model('dbe');			
 			$user = $this->input->post('username');
@@ -34,14 +34,14 @@ class Sample extends CI_Controller {
                         'school' => 'MUST'
                        );
 		 $this->dbe->createTeacher($teacherData);*/
-		 //$data['studInfo'] = $this->dbe->getStudentByName('Raven');
-		 //$data['count'] = $this->dbe->checkResults('Raven');
+		 //$data['studInfo'] = $this->dbe->getStudentByName('Duran');
+		 //$data['count'] = $this->dbe->checkResults('Duran','name');
 		 //$data['studInfo'] = $this->dbe->getStudentById('103');
 		 //$data['teacherInfo'] = $this->dbe->getTeacherById('203');
 		 //$data['tComment'] = $this->dbe->getTeacherComment('103');
 		 //$data['count'] = $this->dbe->checkResults('103' , "teacherComment");
 		 //$this->dbe->createClass('c#','walay klase','abc123');
-		 //$this->dbe->registerInAClass('303','106','202');
+		 //$this->dbe->readdir()gisterInAClass('303','106','202');
 		 //$data['check'] = $this->dbe->checkIfJoined('101', '303');
 		 //$this->dbe->addCloseEndedAnswer('3001', 106);
 		 //$data['check'] = $this->dbe->checkEvaluationAnswered('1001', '102');
@@ -52,11 +52,13 @@ class Sample extends CI_Controller {
 		 //$data['sComment'] = $this->dbe->getStudentsComment('302');		 
 		 //$data['count'] = $this->dbe->checkResults('302', 'studentComment');
 		 //$data['teachers'] = $this->dbe->getAll('teacher');
-		// $data['class'] = $this->dbe->getClassByTeacherId('201');
+		 //$data['class'] = $this->dbe->getClassByTeacherId('201');
 		 //$data['count'] = $this->dbe->checkResults('201', 'classByTeacher');
-		 $data['choices'] = $this->dbe->getChoicesByQuestionId('2001');
-		 $data['count'] = $this->dbe->checkResults('2001', "choicesByQuestion");
-		$this->load->view('sample/formcheck',$data);
+		 //$data['choices'] = $this->dbe->getChoicesByQuestionId('2001');
+		 //$data['count'] = $this->dbe->checkResults('2001', "choicesByQuestion");
+		 //$data['questions'] = $this->dbe->getAllQuestionByEvalId('1002');
+		 //$data['count'] = $this->dbe->checkResults('1002', 'questionByEval');
+		$this->load->view('sample/formcheck');
 		 //$data['count'] = $this->dbe->checkResults('teacher',"getAllTeachers");
 	}
 

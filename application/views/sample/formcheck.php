@@ -9,12 +9,14 @@
 </form>
 
 <?php endif; */
-if($count == 1):
-	echo $choices->answer_text . "<br>";
+/*if($count == 1):
+	echo $questions->question_text . "<br>";
 elseif($count < 1):
 	echo "No Result Found!!!";
 else:
-	foreach($choices as $choice)
-		echo $choice->answer_text . "<br>";
-endif;
+	foreach($questions as $question)
+		echo $question->question_text . "<br>";
+endif;*/
+
+echo $number . " " . $name;
 ?>

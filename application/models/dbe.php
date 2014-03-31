@@ -100,16 +100,14 @@ class Dbe extends CI_Model {
                 $qry = $this->db->query("SELECT * FROM get_class_by_teacher('{$searchKey}') ");
             elseif($for === "choicesByQuestion"):
                 $qry = $this->db->get_where('choice', array('question_id' => $searchKey));
+            elseif($for === "questionByEval"):
+                $qry = $this->db->get_where('question', array('eval_id' => $searchKey) );
             endif;
             return $qry->num_rows();
     }
     function getStudentByName($searchKey){
             $qry = $this->db->query("SELECT * FROM get_student_by_name('{$searchKey}') ");
-            if($qry->num_rows() > 1):
-                return $qry->result();
-            else:
-                return $qry->row();
-            endif;
+            return $this->returnQuery($qry);
     }
     function getStudentById($studId){
             $qry = $this->db->get_where('students', array('id' => $studId) );
@@ -121,11 +119,7 @@ class Dbe extends CI_Model {
     }
     function getTeacherComment($studId){
             $qry = $this->db->get_where('teachers_comment', array('stud_id' => $studId) );
-            if($qry->num_rows() > 1):
-                return $qry->result();
-            else:
-                return $qry->row();
-            endif;
+            return $this->returnQuery($qry);
     }
     function addStudentComment($classId,$comment,$name){
             $commentId = $this->generateId();            
@@ -202,42 +196,33 @@ class Dbe extends CI_Model {
     }
     function getStudentsByClassId($classId){
             $qry = $this->db->query("SELECT * FROM get_student_by_class('{$classId}') ");
-            if($qry->num_rows() > 1):
-                return $qry->result();
-            else:
-                return $qry->row();
-            endif;                
+            return $this->returnQuery($qry);
     }
     function getStudentsComment($classId){
             $qry = $this->db->get_where('comment', array('class_id' => $classId) );
-            if($qry->num_rows() > 1):                
-                return $qry->result();
-            else:
-                return $qry->row();
-            endif;
+            return $this->returnQuery($qry);
     }
     function getAll($get){
             $qry = $this->db->get($get);
-            if($qry->num_rows() > 1):                
-                return $qry->result();
-            else:
-                return $qry->row();
-            endif;       
+            return $this->returnQuery($qry);
     }
     function getClassByTeacherId($teacherId){
             $qry = $this->db->query("SELECT * FROM get_class_by_teacher('{$teacherId}') ");
+            return $this->returnQuery($qry);
+    }
+    function getChoicesByQuestionId($questionId){        
+            $qry = $this->db->get_where('choice', array('question_id' => $questionId) );
+            return $this->returnQuery($qry);
+    }
+    function getAllQuestionByEvalId($evalId){
+            $qry = $this->db->get_where('question', array('eval_id' => $evalId) );
+            return $this->returnQuery($qry);
+    }
+    function returnQuery($qry){
             if($qry->num_rows() > 1):
                 return $qry->result();
             else:
                 return $qry->row();
-            endif;
-    }
-    function getChoicesByQuestionId($questionId){        
-            $qry = $this->db->get_where('choice', array('question_id' => $questionId) );
-            if($qry->num_rows() > 1):
-                return $qry->result();
-            else:
-                return $qry->rows();
             endif;
     }
 }
